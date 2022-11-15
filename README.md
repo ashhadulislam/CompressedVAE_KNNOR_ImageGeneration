@@ -1,3 +1,4 @@
+### Original Source: https://github.com/AntixK/PyTorch-VAE
 <h1 align="center">
   <b>PyTorch VAE</b><br>
 </h1>
