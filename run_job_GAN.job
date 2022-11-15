@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH -J batch
+#SBATCH --time=24:00:00
+#SBATCH --ntasks=18
+#SBATCH --gres=gpu:v100:1
+#SBATCH --output=r1.%j.out
+#SBATCH --qos=express
+
+module load cuda11.1/toolkit
+source /cm/shared/apps/anaconda3/etc/profile.d/conda.sh
+conda activate prune
+
+export OMP_NUM_THREADS=18
+
+srun  --ntasks=1 python 00C_GAN_vs_VK_AllNets.py
